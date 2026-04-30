@@ -1,0 +1,84 @@
+.seat-map-container {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  margin-bottom: 2rem;
+}
+
+.seat-map-container h3 {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.seat-legend {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.wagon-layout {
+  border: 2px solid #ddd;
+  border-radius: 12px;
+  padding: 2rem;
+  background: #f9f9f9;
+  position: relative;
+}
+
+.wagon-layout::before,
+.wagon-layout::after {
+  content: '';
+  position: absolute;
+  top: 20%;
+  bottom: 20%;
+  width: 10px;
+  background: #ddd;
+}
+
+.wagon-layout::before { left: -10px; border-radius: 4px 0 0 4px; }
+.wagon-layout::after { right: -10px; border-radius: 0 4px 4px 0; }
+
+.seats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+  gap: 10px;
+}
+
+.seat {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: white;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: bold;
+  transition: all 0.2s;
+}
+
+.seat.free:hover {
+  background: #e7f3ff;
+  border-color: #007bff;
+}
+
+.seat.booked {
+  background: #eee;
+  color: #aaa;
+  cursor: not-allowed;
+}
+
+.seat.selected {
+  background: #28a745;
+  color: white;
+  border-color: #1e7e34;
+}
