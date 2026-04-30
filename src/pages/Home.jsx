@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { Search } from 'lucide-react';
-import { trains } from '../data/trains';
+import { useTrains } from '../context/TrainContext';
 import TrainList from '../components/TrainList';
 import './Home.css';
 
 const Home = () => {
+  const { trains } = useTrains();
   const [searchTerm, setSearchTerm] = useState('');
 
   const filteredTrains = trains.filter(train => 
